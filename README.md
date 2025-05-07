@@ -72,14 +72,13 @@ We extract features from the *correlation of sensor noise* across image rows and
 |------------|-------------|----------|
 | Exp 1 | Full dataset with 7 vs 17 features | 98.1% / 98.6% |
 | Exp 2 | Removed saturated images | 98.9% / 99.3% |
-| Exp 3 | Leave-one-device-out testing | ~93.5% |
-| Exp 4 | JPEG compressed images (QF=90) | 93.5% |
+
 
 ---
 
 ## 🛠️ Requirements
 
-- Python 3.7+
+- Python 3.9+
 - OpenCV
 - scikit-learn
 - NumPy
@@ -93,11 +92,14 @@ We extract features from the *correlation of sensor noise* across image rows and
 git clone https://github.com/navadeep-munjam/dip_project.git
 cd dip_project
 pip install -r requirements.txt
-cd core
-python3 preprocess.py
-python3 features.py
 
-python3 visualization.py
+python3 core/preprocess.py
+python3 core/features.py
 
-python3 model.py
+python3 core/visualization.py
+
+python3 core/model.py
+
+python3 train.py
+python3 test.py # in the test.py you can change the path of the test image
 ```
